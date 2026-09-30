@@ -1,0 +1,85 @@
+{
+  "name": "fluidreact",
+  "version": "0.1.0",
+  "description": "A React 19 control set whose props mirror the mobile native layout properties 1:1 — 50 controls, one folder each, no CSS required in your pages.",
+  "keywords": [
+    "react",
+    "react-components",
+    "ui",
+    "component-library",
+    "mobile",
+    "native-layout",
+    "layout",
+    "controls",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Son Dao",
+  "homepage": "https://github.com/SonMDao/fluid-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonMDao/fluid-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SonMDao/fluid-react/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/fluidreact.cjs",
+  "module": "./dist/fluidreact.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/fluidreact.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/fluidreact.cjs"
+      }
+    },
+    "./style.css": "./dist/fluidreact.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run typecheck && vite build && npm run build:types",
+    "build:types": "tsc -p tsconfig.build.json && rollup -c rollup.dts.config.mjs",
+    "clean": "node -e \"for (const d of ['dist','.types']) fs.rmSync(d,{recursive:true,force:true})\"",
+    "typecheck": "tsc -p tsconfig.json",
+    "verify:package": "npm run build && publint --strict && attw --pack . --exclude-entrypoints style.css",
+    "samples:install": "npm --prefix Samples install",
+    "samples:dev": "npm --prefix Samples run dev",
+    "samples:build": "npm --prefix Samples run build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "publint": "^0.3.24",
+    "rollup": "^4.63.5",
+    "rollup-plugin-dts": "^6.5.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

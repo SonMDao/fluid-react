@@ -1,0 +1,27 @@
+/* Button — native Button. Colours / radius / padding come from props. */
+.fluid-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  background: #e0e0e0;
+  color: inherit;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.fluid-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fluid-button-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

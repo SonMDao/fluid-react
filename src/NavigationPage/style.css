@@ -1,0 +1,43 @@
+/* NavigationPage — native NavigationPage. */
+.fluid-navigationpage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.fluid-navigationpage-bar {
+  flex: none;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+}
+
+.fluid-navigationpage-back {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fluid-navigationpage-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--text-header, 16px);
+}
+
+.fluid-navigationpage-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fluid-navigationpage-body {
+  flex: 1;
+  min-height: 0;
+}

@@ -1,0 +1,23 @@
+/* Entry — native Entry (single-line input). */
+.fluid-entry {
+  min-height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--text-base, 14px);
+  color: inherit;
+  width: 100%;
+}
+
+.fluid-entry:focus {
+  outline: none;
+}
+
+.fluid-entry::placeholder {
+  color: var(--fluid-placeholder, #b7b7b3);
+}
+
+.fluid-entry:disabled {
+  opacity: 0.5;
+}

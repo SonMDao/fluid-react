@@ -1,0 +1,47 @@
+/* TabbedPage — native TabbedPage. */
+.fluid-tabbedpage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.fluid-tabbedpage-body {
+  flex: 1;
+  min-height: 0;
+}
+
+.fluid-tabbedpage-bar {
+  flex: none;
+  display: flex;
+  border-top: 1px solid var(--card-border, #e9e9e7);
+}
+
+.fluid-tabbedpage-top .fluid-tabbedpage-bar {
+  border-top: none;
+  border-bottom: 1px solid var(--card-border, #e9e9e7);
+}
+
+.fluid-tabbedpage-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--text-xs, 11px);
+  color: var(--text-muted, #9a9a95);
+  cursor: pointer;
+}
+
+.fluid-tabbedpage-tab img {
+  width: 22px;
+  height: 22px;
+}
+
+.fluid-tabbedpage-tab-selected {
+  color: var(--accent-blue, #2563eb);
+}

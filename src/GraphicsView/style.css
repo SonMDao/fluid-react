@@ -1,0 +1,6 @@
+/* GraphicsView — native GraphicsView (<canvas>). */
+.fluid-graphicsview {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

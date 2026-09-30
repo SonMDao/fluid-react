@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20.19', '22', '24']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            Samples/package-lock.json
+
+      - name: Install library dependencies
+        run: npm ci
+
+      - name: Typecheck library
+        run: npm run typecheck
+
+      - name: Build library
+        run: npm run build
+
+      - name: Verify publishable package (exports, types, CJS/ESM resolution)
+        run: npx publint --strict && npx attw --pack . --exclude-entrypoints style.css
+
+      - name: Install showcase dependencies
+        run: npm ci --prefix Samples
+
+      - name: Build showcase
+        run: npm run samples:build
+
+      - name: Upload library build
+        if: matrix.node == '22'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7

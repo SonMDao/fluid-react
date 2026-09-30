@@ -1,0 +1,12 @@
+# Normalize to LF in the repository; check out with the platform's native endings.
+# Existing blobs stay as they are until a file is next touched, so this migrates gradually.
+# To convert everything in one commit instead: git add --renormalize . && git commit
+* text=auto
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.woff binary
+*.woff2 binary

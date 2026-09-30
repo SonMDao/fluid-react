@@ -1,0 +1,36 @@
+/* Switch — native Switch. */
+.fluid-switch {
+  width: 51px;
+  height: 31px;
+  border-radius: 16px;
+  border: none;
+  background: #e6e6e7;
+  padding: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.15s ease;
+  flex: none;
+}
+
+.fluid-switch-on {
+  background: var(--fluid-switch-on, var(--accent-blue, #2563eb));
+}
+
+.fluid-switch-thumb {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--fluid-switch-thumb, #fff);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.fluid-switch-on .fluid-switch-thumb {
+  transform: translateX(20px);
+}
+
+.fluid-switch:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

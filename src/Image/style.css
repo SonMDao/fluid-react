@@ -1,0 +1,5 @@
+/* Image — native Image. Aspect maps to object-fit. */
+.fluid-image {
+  display: block;
+  max-width: 100%;
+}

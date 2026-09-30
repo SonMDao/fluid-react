@@ -1,0 +1,21 @@
+/* ListView — native ListView (legacy). */
+.fluid-listview {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.fluid-listview-row {
+  display: flex;
+  align-items: center;
+}
+
+.fluid-listview-row-separated {
+  border-bottom: 1px solid var(--fluid-separator, #e9e9e7);
+}
+
+.fluid-listview-row-selected {
+  background: rgba(37, 99, 235, 0.08);
+}

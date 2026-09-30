@@ -1,0 +1,14 @@
+/* IndicatorView — native IndicatorView. */
+.fluid-indicatorview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.fluid-indicatorview-dot {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}

@@ -1,0 +1,57 @@
+name: Bug report
+description: A control behaves differently from its mobile native counterpart, or is broken outright.
+labels: [bug]
+body:
+  - type: input
+    id: control
+    attributes:
+      label: Control
+      description: Which control, exactly as it is exported (e.g. `CollectionView`).
+      placeholder: Grid
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: The smallest snippet that shows it. A StackBlitz link is welcome too.
+      render: tsx
+      placeholder: |
+        <Grid RowDefinitions="Auto,*">
+          <Grid.Item Row={1}>…</Grid.Item>
+        </Grid>
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What the native control does
+      description: The behaviour you expected, and why — a link to the platform documentation if
+        you have one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What FluidReact did instead
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: FluidReact version
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: React version and browser
+      placeholder: React 19.3.0, Chrome 141
+    validations:
+      required: true

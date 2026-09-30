@@ -1,0 +1,30 @@
+/* Stepper — native Stepper. */
+.fluid-stepper {
+  display: inline-flex;
+  align-items: stretch;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--navbar-btn-border, #c4c4c4);
+  background: #fff;
+  overflow: hidden;
+}
+
+.fluid-stepper-button {
+  width: 42px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fluid-stepper-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.fluid-stepper-divider {
+  width: 1px;
+  background: var(--navbar-btn-border, #c4c4c4);
+}

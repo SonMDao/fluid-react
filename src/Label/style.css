@@ -1,0 +1,6 @@
+/* Label — native Label. Colour / size / alignment / truncation come from props. */
+.fluid-label {
+  display: block;
+  min-width: 0;
+  margin: 0;
+}

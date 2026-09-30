@@ -1,0 +1,64 @@
+.splitter {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.splitter-horizontal {
+  flex-direction: row;
+}
+
+.splitter-vertical {
+  flex-direction: column;
+}
+
+/* min-width/min-height duplicate ScrollView's own .fluid-scrollview rule (harmless, kept in case a
+   pane is ever rendered by something other than ScrollView); scrolling itself comes from
+   ScrollView's Orientation="Both" prop, not from CSS. */
+.splitter-pane {
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Background comes from BoxView's `Color` prop (Splitter.tsx), not CSS — an inline style always
+   wins over a stylesheet :hover/:active rule, so hover/drag highlighting is tracked as state
+   there instead. */
+.splitter-handle {
+  position: relative;
+  flex: none;
+  touch-action: none;
+}
+
+.splitter-horizontal .splitter-handle {
+  cursor: col-resize;
+}
+
+.splitter-vertical .splitter-handle {
+  cursor: row-resize;
+}
+
+/* Widens the draggable hit area a few px past the handle's own (often 1px, for a crisp
+   VS Code-style border) visible width, without touching that visible width itself — a hairline
+   bar is easy to see but hard to grab precisely. `::before` still hit-tests as part of
+   `.splitter-handle` itself (pointer events on a pseudo-element target their host element), so
+   Splitter.tsx's own listeners (attached to the real handle node) fire the same as a direct hit. */
+.splitter-handle::before {
+  content: '';
+  position: absolute;
+}
+
+.splitter-horizontal .splitter-handle::before {
+  top: 0;
+  bottom: 0;
+  left: -3px;
+  right: -3px;
+}
+
+.splitter-vertical .splitter-handle::before {
+  left: 0;
+  right: 0;
+  top: -3px;
+  bottom: -3px;
+}

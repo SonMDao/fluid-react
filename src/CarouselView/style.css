@@ -1,0 +1,22 @@
+/* CarouselView — native CarouselView. */
+.fluid-carouselview {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.fluid-carouselview::-webkit-scrollbar {
+  display: none;
+}
+
+.fluid-carouselview-locked {
+  overflow-x: hidden;
+}
+
+.fluid-carouselview-item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  min-width: 0;
+}

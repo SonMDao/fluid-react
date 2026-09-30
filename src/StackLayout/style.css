@@ -1,0 +1,6 @@
+/* StackLayout — native StackLayout. Direction / spacing / alignment come from props. */
+.fluid-stacklayout {
+  display: flex;
+  min-height: 0;
+  min-width: 0;
+}

@@ -1,0 +1,33 @@
+name: Control or property request
+description: A mobile native control or layout property that FluidReact does not cover yet.
+labels: [enhancement]
+body:
+  - type: input
+    id: control
+    attributes:
+      label: Control
+      description: The native control name.
+      placeholder: SwipeView
+    validations:
+      required: true
+
+  - type: input
+    id: property
+    attributes:
+      label: Property
+      description: The layout property, if you are asking for one rather than a whole control.
+      placeholder: Threshold
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: Native reference
+      description: A link to the platform documentation, and the value vocabulary it accepts.
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage
+    attributes:
+      label: How you would use it
+      render: tsx

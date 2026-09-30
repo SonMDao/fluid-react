@@ -1,0 +1,24 @@
+/* Editor — native Editor (multi-line input). */
+.fluid-editor {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--text-base, 14px);
+  color: inherit;
+  line-height: 1.4;
+  padding: 0;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.fluid-editor:focus {
+  outline: none;
+}
+
+.fluid-editor::placeholder {
+  color: var(--fluid-placeholder, #b7b7b3);
+}
+
+.fluid-editor:disabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,47 @@
+/* SwipeView — native SwipeView. */
+.fluid-swipeview {
+  position: relative;
+  overflow: hidden;
+}
+
+.fluid-swipeview-actions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.fluid-swipeview-actions-left {
+  left: 0;
+}
+
+.fluid-swipeview-actions-right {
+  right: 0;
+}
+
+.fluid-swipeview-action {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--text-sm, 12px);
+  font-weight: 700;
+  color: #fff;
+  background: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.fluid-swipeview-action img {
+  width: 22px;
+  height: 22px;
+}
+
+.fluid-swipeview-content {
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  transition: transform 0.18s ease;
+}

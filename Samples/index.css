@@ -1,0 +1,62 @@
+/* FluidReactSample design tokens + base page.
+ *
+ * These 18 custom properties are the exact set the `@Fluid` library reads via `var(--…)` — every
+ * control ships an inline fallback (e.g. `var(--accent-blue, #2563eb)`), and defining the token
+ * here is what makes the whole app render with the intended palette/typography instead of the
+ * per-control fallbacks (FR-009 / SC-004: no control may fall back). Values mirror the library's
+ * own fallbacks, so nothing degrades; the three control-specific colours that the library aliases
+ * off `--accent-blue` (`--fluid-slider-thumb`, `--fluid-switch-on`, `--fluid-progress-color`) are
+ * set to that same accent so the alias and the fallback agree.
+ */
+:root {
+  /* Type scale */
+  --text-header: 16px;
+  --text-md: 15px;
+  --text-base: 14px;
+  --text-sm: 12px;
+  --text-xs: 11px;
+
+  /* Text, accent & action colours */
+  --text: #737373;
+  --text-muted: #9a9a95;
+  --accent-blue: #2563eb;
+  --primary-action-bg: #111;
+
+  /* Borders & separators */
+  --card-border: #e9e9e7;
+  --navbar-btn-border: #c4c4c4;
+  --fluid-separator: #e9e9e7;
+
+  /* Control-specific */
+  --fluid-placeholder: #b7b7b3;
+  --fluid-cancel: #c4c4c4;
+  --fluid-slider-thumb: #2563eb;
+  --fluid-switch-on: #2563eb;
+  --fluid-switch-thumb: #fff;
+  --fluid-progress-color: #2563eb;
+}
+
+/* Base page: a neutral canvas, readable default text, and a full-height root so the shell's
+ * middle (`*`) grid row actually expands instead of collapsing to its content. */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible keyboard focus for the catalog listbox options (FR-018) — the class is applied by
+ * `ControlCatalog`; the outline colour comes from the token set, never a literal. */
+.fluid-catalog-option:focus {
+  outline: 2px solid var(--primary-action-bg);
+  outline-offset: -2px;
+}

@@ -1,0 +1,5 @@
+/* BoxView — native BoxView. */
+.fluid-boxview {
+  display: block;
+  flex: none;
+}

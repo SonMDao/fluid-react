@@ -1,0 +1,18 @@
+/* CollectionView — native CollectionView. Layout / spacing / selection come from props. */
+.fluid-collectionview {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fluid-collectionview-horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.fluid-collectionview-item-selected {
+  outline: 2px solid var(--accent-blue, #2563eb);
+  outline-offset: -2px;
+  border-radius: 8px;
+}

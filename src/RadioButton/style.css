@@ -1,0 +1,22 @@
+/* RadioButton — native RadioButton. */
+.fluid-radiobutton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: var(--text-base, 14px);
+  color: inherit;
+}
+
+.fluid-radiobutton input {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  cursor: pointer;
+  accent-color: var(--accent-blue, #2563eb);
+}
+
+.fluid-radiobutton input:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
